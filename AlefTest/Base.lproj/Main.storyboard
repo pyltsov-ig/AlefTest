@@ -16,22 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Персональные данные" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olG-s4-7dD">
-                                <rect key="frame" x="20" y="50" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персональные данные" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olG-s4-7dD">
+                                <rect key="frame" x="20" y="50" width="239.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ZX-RQ-9kU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-7R-LzN">
-                                <rect key="frame" x="20" y="255" width="170" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дети (макс. 5)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-7R-LzN">
+                                <rect key="frame" x="20" y="255" width="142" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xBt-OU-jxY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTy-18-RqV" customClass="HoshiTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTy-18-RqV" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="35" y="93" width="344" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A2B-Lo-1eg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -43,9 +49,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCe-sX-OmG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCe-sX-OmG">
                                 <rect key="frame" x="175" y="246" width="213" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="5KN-XJ-tHB"/>
+                                    <constraint firstAttribute="height" constant="54" id="iWa-I5-neG"/>
+                                </constraints>
                                 <state key="normal" title=" Добавить ребенка" image="plus" catalog="system">
                                     <color key="titleColor" systemColor="systemTealColor"/>
                                 </state>
@@ -61,9 +70,8 @@
                                     <action selector="addChildBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8um-5D-TLQ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKa-0d-D61">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKa-0d-D61">
                                 <rect key="frame" x="20" y="318" width="374" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChildCell" rowHeight="170" id="Pcp-Jw-HFq" customClass="ChildrenTableViewCell" customModule="AlefTest" customModuleProvider="target">
@@ -73,9 +81,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izK-LK-LYc" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izK-LK-LYc" customClass="HoshiTextField" customModule="TextFieldEffects">
                                                     <rect key="frame" x="20" y="11" width="187" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="oDg-qO-USm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
@@ -87,9 +97,11 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svk-xw-s7v" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svk-xw-s7v" customClass="HoshiTextField" customModule="TextFieldEffects">
                                                     <rect key="frame" x="20" y="89" width="187" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="bbN-5e-32O"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     <userDefinedRuntimeAttributes>
@@ -101,9 +113,13 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-30-Lyg">
-                                                    <rect key="frame" x="271" y="26" width="58" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-30-Lyg">
+                                                    <rect key="frame" x="268" y="26" width="69" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="kCr-hf-hv7"/>
+                                                        <constraint firstAttribute="width" constant="69" id="whu-3C-QNt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Удалить">
                                                         <color key="titleColor" systemColor="systemTealColor"/>
                                                     </state>
@@ -112,6 +128,18 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Svk-xw-s7v" firstAttribute="top" secondItem="izK-LK-LYc" secondAttribute="bottom" constant="18" id="B0G-VB-78n"/>
+                                                <constraint firstItem="izK-LK-LYc" firstAttribute="top" secondItem="1cb-sd-3rp" secondAttribute="topMargin" id="FgX-Ly-Ez6"/>
+                                                <constraint firstItem="izK-LK-LYc" firstAttribute="leading" secondItem="1cb-sd-3rp" secondAttribute="leadingMargin" id="Fwz-ow-Igu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Svk-xw-s7v" secondAttribute="trailing" constant="147" id="GJz-Fh-v6I"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LQ4-30-Lyg" secondAttribute="bottom" constant="99" id="HSd-43-Ttw"/>
+                                                <constraint firstItem="LQ4-30-Lyg" firstAttribute="top" secondItem="1cb-sd-3rp" secondAttribute="topMargin" constant="15" id="N1s-fG-QYk"/>
+                                                <constraint firstItem="LQ4-30-Lyg" firstAttribute="leading" secondItem="izK-LK-LYc" secondAttribute="trailing" constant="61" id="TNO-Q9-aT0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LQ4-30-Lyg" secondAttribute="trailing" constant="17" id="aQ6-Fy-pyy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Svk-xw-s7v" secondAttribute="bottom" constant="10" id="cl3-Ha-bLB"/>
+                                                <constraint firstItem="Svk-xw-s7v" firstAttribute="leading" secondItem="1cb-sd-3rp" secondAttribute="leadingMargin" id="mJ9-zS-yNu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="childAgeField" destination="Svk-xw-s7v" id="3N5-Ef-x1y"/>
@@ -120,9 +148,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-sD-uoq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-sD-uoq">
                                 <rect key="frame" x="101" y="808" width="213" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="7Hg-1J-VPK"/>
+                                    <constraint firstAttribute="width" constant="213" id="mnk-Wk-Bqg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Очистить">
                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -139,9 +170,11 @@
                                     <action selector="clearBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYY-wf-MKQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-oc-vOo" customClass="HoshiTextField" customModule="TextFieldEffects">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-oc-vOo" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="35" y="164" width="344" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ssi-m7-xoD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <userDefinedRuntimeAttributes>
@@ -156,6 +189,29 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lz8-7R-LzN" firstAttribute="top" secondItem="HIP-oc-vOo" secondAttribute="bottom" constant="31" id="8Qz-yr-icW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kKa-0d-D61" secondAttribute="trailing" constant="20" id="FjD-aE-N8D"/>
+                            <constraint firstItem="HIP-oc-vOo" firstAttribute="top" secondItem="QTy-18-RqV" secondAttribute="bottom" constant="11" id="GJP-PY-8nq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gCe-sX-OmG" secondAttribute="trailing" constant="26" id="J1a-qB-fK4"/>
+                            <constraint firstItem="kKa-0d-D61" firstAttribute="top" secondItem="gCe-sX-OmG" secondAttribute="bottom" constant="18" id="N0m-qG-LlK"/>
+                            <constraint firstItem="olG-s4-7dD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OeX-kO-cR4"/>
+                            <constraint firstItem="Lz8-7R-LzN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Upr-FP-pTL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QTy-18-RqV" secondAttribute="trailing" constant="35" id="YuN-VL-ie8"/>
+                            <constraint firstItem="HIP-oc-vOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="ZEz-6v-zCx"/>
+                            <constraint firstItem="olG-s4-7dD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="fPs-DL-eI3"/>
+                            <constraint firstItem="6Kg-sD-uoq" firstAttribute="top" secondItem="kKa-0d-D61" secondAttribute="bottom" constant="16" id="gJf-lc-jc6"/>
+                            <constraint firstItem="QTy-18-RqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="hIx-Ua-Y3a"/>
+                            <constraint firstItem="kKa-0d-D61" firstAttribute="top" secondItem="gCe-sX-OmG" secondAttribute="bottom" constant="18" id="jrK-cv-qDl"/>
+                            <constraint firstItem="6Kg-sD-uoq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q8G-qS-7Ag"/>
+                            <constraint firstItem="kKa-0d-D61" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sP6-wB-WlT"/>
+                            <constraint firstItem="gCe-sX-OmG" firstAttribute="top" secondItem="HIP-oc-vOo" secondAttribute="bottom" constant="22" id="uut-fe-0LJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Kg-sD-uoq" secondAttribute="trailing" constant="100" id="veM-ld-1Aa"/>
+                            <constraint firstItem="6Kg-sD-uoq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="101" id="ykI-um-MXt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HIP-oc-vOo" secondAttribute="trailing" constant="35" id="zB1-CR-pyN"/>
+                            <constraint firstItem="6Kg-sD-uoq" firstAttribute="top" secondItem="kKa-0d-D61" secondAttribute="bottom" constant="16" id="zFD-fR-MVz"/>
+                            <constraint firstItem="QTy-18-RqV" firstAttribute="top" secondItem="olG-s4-7dD" secondAttribute="bottom" constant="13" id="zRw-gh-9vg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addChild" destination="gCe-sX-OmG" id="1JS-S8-ufi"/>
