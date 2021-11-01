@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		659592D7272FCDD000591C84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659592D5272FCDD000591C84 /* Main.storyboard */; };
 		659592D9272FCDD200591C84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 659592D8272FCDD200591C84 /* Assets.xcassets */; };
 		659592DC272FCDD200591C84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659592DA272FCDD200591C84 /* LaunchScreen.storyboard */; };
+		659592E42730128800591C84 /* ChildrenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659592E32730128800591C84 /* ChildrenTableViewCell.swift */; };
+		659592E6273022D400591C84 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659592E5273022D400591C84 /* Model.swift */; };
+		EBCD20A3813AE31330D24655 /* Pods_AlefTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7324D9763C0B9CF370B6BDA7 /* Pods_AlefTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		659592D8272FCDD200591C84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		659592DB272FCDD200591C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		659592DD272FCDD200591C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659592E32730128800591C84 /* ChildrenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenTableViewCell.swift; sourceTree = "<group>"; };
+		659592E5273022D400591C84 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7324D9763C0B9CF370B6BDA7 /* Pods_AlefTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlefTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B663AE17CA6BA91C5326C9 /* Pods-AlefTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlefTest.release.xcconfig"; path = "Target Support Files/Pods-AlefTest/Pods-AlefTest.release.xcconfig"; sourceTree = "<group>"; };
+		DC7875E78A8AB2C8FDC15936 /* Pods-AlefTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlefTest.debug.xcconfig"; path = "Target Support Files/Pods-AlefTest/Pods-AlefTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBCD20A3813AE31330D24655 /* Pods_AlefTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F635ECD51D106F5FD039633 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7324D9763C0B9CF370B6BDA7 /* Pods_AlefTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		659592C3272FCDD000591C84 = {
 			isa = PBXGroup;
 			children = (
 				659592CE272FCDD000591C84 /* AlefTest */,
 				659592CD272FCDD000591C84 /* Products */,
+				82321D224BAA39C771EBF7F6 /* Pods */,
+				3F635ECD51D106F5FD039633 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +79,22 @@
 				659592D1272FCDD000591C84 /* SceneDelegate.swift */,
 				659592D3272FCDD000591C84 /* ViewController.swift */,
 				659592D5272FCDD000591C84 /* Main.storyboard */,
+				659592E32730128800591C84 /* ChildrenTableViewCell.swift */,
 				659592D8272FCDD200591C84 /* Assets.xcassets */,
 				659592DA272FCDD200591C84 /* LaunchScreen.storyboard */,
 				659592DD272FCDD200591C84 /* Info.plist */,
+				659592E5273022D400591C84 /* Model.swift */,
 			);
 			path = AlefTest;
+			sourceTree = "<group>";
+		};
+		82321D224BAA39C771EBF7F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC7875E78A8AB2C8FDC15936 /* Pods-AlefTest.debug.xcconfig */,
+				B3B663AE17CA6BA91C5326C9 /* Pods-AlefTest.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 659592E0272FCDD200591C84 /* Build configuration list for PBXNativeTarget "AlefTest" */;
 			buildPhases = (
+				4F74DEA70F22873F6044FA06 /* [CP] Check Pods Manifest.lock */,
 				659592C8272FCDD000591C84 /* Sources */,
 				659592C9272FCDD000591C84 /* Frameworks */,
 				659592CA272FCDD000591C84 /* Resources */,
+				E0A8A439041953244DB240F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +164,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F74DEA70F22873F6044FA06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlefTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A8A439041953244DB240F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlefTest/Pods-AlefTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlefTest/Pods-AlefTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlefTest/Pods-AlefTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		659592C8272FCDD000591C84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659592E6273022D400591C84 /* Model.swift in Sources */,
 				659592D4272FCDD000591C84 /* ViewController.swift in Sources */,
 				659592D0272FCDD000591C84 /* AppDelegate.swift in Sources */,
+				659592E42730128800591C84 /* ChildrenTableViewCell.swift in Sources */,
 				659592D2272FCDD000591C84 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +359,7 @@
 		};
 		659592E1272FCDD200591C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC7875E78A8AB2C8FDC15936 /* Pods-AlefTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +379,7 @@
 		};
 		659592E2272FCDD200591C84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3B663AE17CA6BA91C5326C9 /* Pods-AlefTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
