@@ -22,7 +22,9 @@ class ChildrenTableViewCell: UITableViewCell {
     var delegate:ChildrenTabelViewCellDelegate?
  
     
-    
+    /**
+     Переменная Data для получения данных из ViewConroller
+     */
     var data:Child? {
         didSet {
             guard data != nil else {
@@ -44,7 +46,7 @@ class ChildrenTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
     
     @IBAction func deleteCellAction(_ sender: UIButton) {
@@ -54,6 +56,12 @@ class ChildrenTableViewCell: UITableViewCell {
         delegate?.deleteCell(id: id)
     }
 }
+
+
+/**
+ Подписываемся на протол   UITextFieldDelegate  чтобы воспользоваться  методом shouldChangeCharactersIn
+ для ограничения набора символов доступных для ввода в поля возраста.
+ */
 
 extension ChildrenTableViewCell: UITextFieldDelegate {
     
@@ -66,6 +74,11 @@ extension ChildrenTableViewCell: UITextFieldDelegate {
         return true
     }
     
+    /**
+     Так как в задании указано, что данные о детях вводятся и редактируюся в блоке,
+     я ловлю событие окончания редактирования TextField и обновляю массив model.childrenList,
+     используя делегирование.
+     */
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == childNameField {
             guard

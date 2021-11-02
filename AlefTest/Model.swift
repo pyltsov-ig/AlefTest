@@ -24,7 +24,7 @@ struct Child {
 class Model {
     
     /**
-     Массив для хранения списка детей.
+     Массив для хранения списка данных о детях.
      */
     var childrenList = [Child]()
     
@@ -52,7 +52,6 @@ class Model {
         primaryKey += 1
         let child = Child(id: primaryKey, name: "", age: 0)
         childrenList.append(child)
-        print(primaryKey)
     }
     
     /**

@@ -48,6 +48,10 @@ class ViewController: UIViewController {
     
     @IBAction func clearBtnAction(_ sender: UIButton) {
         
+        /**
+         Здесь реализована ActionSheet и обработка нажатий на ее кнопки
+         */
+        
         let alert = UIAlertController(title: "Удалить все данные?", message: "", preferredStyle: .actionSheet)
         let clearAction = UIAlertAction(title: "очистить", style: .default) { _ in
             model.clearAllData()
@@ -66,11 +70,16 @@ class ViewController: UIViewController {
         
     }
     
-    
+    /**
+     Показываем или скрываем кнопку добавления данных о ребенке в зависимости от количества элементов в массиве
+     */
     func showHideAddBtn() {
         (model.childrenList.count == 5) ? (addChild.isHidden = true) : (addChild.isHidden = false)
     }
     
+    /**
+     При распознавании касания в любом месте экрана, не занятого TextField, закрываем клавиатуру.
+     */
     @IBAction func tapRecognizeAction(_ sender: UITapGestureRecognizer) {
         hideKeyboard()
     }
@@ -80,6 +89,9 @@ class ViewController: UIViewController {
     }
 }
 
+/**
+ Подписываемся на протоколы  UITableViewDelegate, UITableViewDataSource  для работы с TableView данных о детях
+ */
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,12 +110,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
+    /**
+     Делаем ячейку больше по высоте, чтобы было похоже на то что требуется в задании.
+     */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
 }
 
+/**
+ Подписываемся на протокол  ChildrenTabelViewCellDelegate чтобы работать с методами  updateCell и  deleteCell,
+ делегироваными ChildrenTableViewCell
+ */
 extension ViewController:ChildrenTabelViewCellDelegate {
     
     func updateCell(id:Int, newName:String, newAge:Int) {
@@ -118,12 +136,13 @@ extension ViewController:ChildrenTabelViewCellDelegate {
         childrenTableView.reloadData()
     }
 }
-
+/**
+ Подписываемся на протол   UITextFieldDelegate  чтобы воспользоваться  методом shouldChangeCharactersIn
+ для ограничения набора символов доступных для ввода в поля возраста.
+ */
 
 extension ViewController:UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        hideKeyboard()
-    }
+
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == adultAge {
