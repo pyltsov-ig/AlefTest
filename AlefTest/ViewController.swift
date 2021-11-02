@@ -9,17 +9,17 @@ import UIKit
 import TextFieldEffects
 
 class ViewController: UIViewController {
-
+    
+    /**
+     Для требуемой функциональности TextField используются уже готвые элементы, которые загружены с GitHub
+     TextFieldEffects
+     */
     @IBOutlet weak var adulteName: HoshiTextField!
     @IBOutlet weak var adultAge: HoshiTextField!
+    
     @IBOutlet weak var addChild: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var childrenTableView: UITableView!
-    
-    
-    //var childrenList = [Child]()
-    
-    var addBtnIsDisabled:Bool = false
     
     
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class ViewController: UIViewController {
         
         childrenTableView.delegate = self
         childrenTableView.dataSource = self
+        
+        adulteName.delegate = self
+        adultAge.delegate = self
         
         addChild.layer.borderColor = UIColor.systemTeal.cgColor
         clearButton.layer.borderColor = UIColor.red.cgColor
@@ -45,8 +48,8 @@ class ViewController: UIViewController {
     
     @IBAction func clearBtnAction(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Удалить все данные?", message: "Удаление", preferredStyle: .actionSheet)
-        let clearAction = UIAlertAction(title: "Очистить", style: .default) { _ in
+        let alert = UIAlertController(title: "Удалить все данные?", message: "", preferredStyle: .actionSheet)
+        let clearAction = UIAlertAction(title: "очистить", style: .default) { _ in
             model.clearAllData()
             self.showHideAddBtn()
             self.adulteName.text = ""
@@ -68,6 +71,9 @@ class ViewController: UIViewController {
         (model.childrenList.count == 5) ? (addChild.isHidden = true) : (addChild.isHidden = false)
     }
     
+    @IBAction func tapRecognizeAction(_ sender: UITapGestureRecognizer) {
+        hideKeyboard()
+    }
     
     @objc func hideKeyboard() {
         view.endEditing(true)
@@ -82,7 +88,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = childrenTableView.dequeueReusableCell(withIdentifier: "ChildCell", for: indexPath) as? ChildrenTableViewCell else {return ChildrenTableViewCell()}
+        guard let cell = childrenTableView.dequeueReusableCell(withIdentifier: "ChildCell", for: indexPath) as? ChildrenTableViewCell else {
+            return ChildrenTableViewCell()
+        }
                 
         cell.data = model.childrenList[indexPath.row]
         
@@ -101,17 +109,30 @@ extension ViewController:ChildrenTabelViewCellDelegate {
     func updateCell(id:Int, newName:String, newAge:Int) {
         model.updateChild(id: id, newName: newName, newAge: newAge)
         childrenTableView.reloadData()
-        hideKeyboard()
+        
     }
     
     func deleteCell(id: Int) {
         model.deleteChild(id: id)
         showHideAddBtn()
         childrenTableView.reloadData()
-        hideKeyboard()
     }
 }
 
 
+extension ViewController:UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        hideKeyboard()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == adultAge {
+            let allowedCharacters = CharacterSet(charactersIn: "0123456789")
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
+        return true
+    }
 
+}
 

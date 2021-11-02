@@ -39,7 +39,6 @@ class ChildrenTableViewCell: UITableViewCell {
         super.awakeFromNib()
         childAgeField.delegate = self
         childNameField.delegate = self
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
